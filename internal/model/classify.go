@@ -1,6 +1,5 @@
 package model
 
-import "time"
 
 type GenderizeResponse struct {
 	Count       int      `json:"count"`
