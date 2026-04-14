@@ -15,5 +15,5 @@ type ClassifyResponseData struct {
 	Probability float64   `json:"probability"`
 	SampleSize  int       `json:"sample_size"`
 	IsConfident bool      `json:"is_confident"`
-	ProcessedAt time.Time `json:"processed_at"`
+	ProcessedAt string  `json:"processed_at"`
 }

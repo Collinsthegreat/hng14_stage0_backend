@@ -36,11 +36,11 @@ func (s *classifyService) Classify(ctx context.Context, name string) (*model.Cla
 	isConfident := resp.Probability >= 0.7 && resp.Count >= 100
 
 	return &model.ClassifyResponseData{
-		Name:        resp.Name,
+		Name:        name,
 		Gender:      *resp.Gender,
 		Probability: resp.Probability,
 		SampleSize:  resp.Count,
 		IsConfident: isConfident,
-		ProcessedAt: time.Now().UTC(),
+		ProcessedAt: time.Now().UTC().Truncate(time.Second).Format(time.RFC3339),
 	}, nil
 }

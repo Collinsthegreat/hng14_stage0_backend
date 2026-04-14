@@ -11,7 +11,7 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-var validNameRegex = regexp.MustCompile(`^[a-zA-Z\-]+$`)
+var validNameRegex = regexp.MustCompile(`^[a-zA-Z\-\s]+$`)
 
 type ClassifyHandler struct {
 	svc service.ClassifyService
